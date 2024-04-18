@@ -88,3 +88,6 @@ if($res == 0) {
 } else {
     echo "\n You Lose \n";
 }
+
+echo "\n";
+echo bin2hex($hmac->getKey()) . "\n";
