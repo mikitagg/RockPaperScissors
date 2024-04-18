@@ -1,0 +1,22 @@
+{
+    "name": "bender/itransition3",
+    "description": "кщrock paper scissors with php",
+    "require": {
+        "phplucidframe/console-table": "^1.2",
+      "ext-readline": "*",
+      "ext-openssl": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bender\\Itransition3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bender",
+            "email": "mikitabondarkov@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
