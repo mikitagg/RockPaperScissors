@@ -14,7 +14,7 @@ $table = new ConsoleTable();
 $customTable = new Table($table, $formula);
 $hmac = new Generator();
 $validate = new Validator($argv);
-$uiHelper = new UIHelper();
+$uiHelper = new UIHelper($argv);
 
 if (!$validate->isPassed())
 {
@@ -22,9 +22,7 @@ if (!$validate->isPassed())
     die;
 }
 
-$args = array_slice($argv, 1);
-
-$moves = array_combine(range(1, count($args)), $args);
+$moves = $uiHelper->getMoves();
 
 $customTable->create($moves)->displayTable();
 
@@ -34,18 +32,11 @@ $hmac->generate($compMove);
 
 echo "HMAC: " . $hmac->getHmac();
 
-$menu = $moves + ['0' => 'exit', '?' => 'help'];
-
-foreach($menu as $key=>$value) {
-    echo "\n".$key." - ".$value;
-}
+$uiHelper->displayMenu();
 
 echo "\n";
 
-$select = readline("Enter your move:");
-
-
-$userMove = $uiHelper->selectValues($select, $moves);
+$userMove = $uiHelper->selectValues($moves);
 
 echo $moves[$userMove] . "\n";
 
