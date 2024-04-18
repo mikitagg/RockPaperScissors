@@ -17,7 +17,7 @@ class Table
         $this->formula = $formula;
     }
 
-    public function create(array $args): void
+    public function create(array $args): Table
     {
 
         $this->table->addHeader('PC/USER');
@@ -35,9 +35,9 @@ class Table
                     continue;
                 }
                     $this->table->addColumn('Lose');
-
             }
         }
+        return $this;
     }
 
     public function displayTable(): void

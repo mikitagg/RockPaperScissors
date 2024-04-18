@@ -49,11 +49,9 @@ if (!$validate->isPassed())
 
 $args = array_slice($argv, 1);
 
-$keyValues = range(1, count($args));
-$moves = array_combine($keyValues, $args);
+$moves = array_combine(range(1, count($args)), $args);
 
-$customTable->create($moves);
-$customTable->displayTable();
+$customTable->create($moves)->displayTable();
 
 $compMove = rand(0, count($moves));
 
