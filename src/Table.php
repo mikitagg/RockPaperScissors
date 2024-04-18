@@ -20,7 +20,7 @@ class Table
     public function create(array $args): Table
     {
 
-        $this->table->addHeader('PC/USER');
+        $this->table->addHeader('v PC/USER >');
 
         for($i = 1; $i < count($args)+1; $i++){
             $this->table->addHeader($args[$i])->addRow()->addColumn($args[$i]);
