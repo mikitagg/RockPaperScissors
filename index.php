@@ -24,7 +24,7 @@ function help($moves)
 
 function selectValues($select, $moves)
 {
-    if ($select <= 0 || $select >= count($moves)) {
+    if ((int)$select < 0 || (int)$select > count($moves)) {
         return message($moves);
     }
     return match ($select) {
@@ -39,9 +39,7 @@ $formula = new Formula();
 $table = new ConsoleTable();
 $customTable = new Table($table, $formula);
 $hmac = new Generator();
-$validate = new Validator();
-
-$validate->validate($argv);
+$validate = new Validator($argv);
 
 if (!$validate->isPassed())
 {

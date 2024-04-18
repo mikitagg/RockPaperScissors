@@ -7,9 +7,10 @@ use Bender\Itransition3\Formula;
 
 class Table
 {
-    protected ConsoleTable $table;
+    private ConsoleTable $table;
 
-    protected Formula $formula;
+    private Formula $formula;
+
     public function __construct(ConsoleTable $table, Formula $formula)
     {
         $this->table = $table;
@@ -27,11 +28,14 @@ class Table
                 $ans = $this->formula->formula($args, $j, $i);
                 if($ans == 0) {
                     $this->table->addColumn('Draw');
-                } elseif($ans > 0) {
-                    $this->table->addColumn('Win');
-                } else {
-                    $this->table->addColumn('Lose');
+                    continue;
                 }
+                if ($ans > 0) {
+                    $this->table->addColumn('Win');
+                    continue;
+                }
+                    $this->table->addColumn('Lose');
+
             }
         }
     }

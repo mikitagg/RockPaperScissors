@@ -19,11 +19,6 @@ class Generator
         $this->hmac = hash_hmac('sha3-256', hash('sha3-256', $move), $this->key);
     }
 
-    public function generateRandomBytes(): string
-    {
-        return random_bytes(32);
-    }
-
     public function getHmac(): string
     {
         return $this->hmac;
@@ -33,4 +28,10 @@ class Generator
     {
         return $this->key;
     }
+
+    private function generateRandomBytes(): string
+    {
+        return random_bytes(32);
+    }
+
 }
