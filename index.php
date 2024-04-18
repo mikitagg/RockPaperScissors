@@ -9,6 +9,10 @@ use Bender\Itransition3\Table;
 use Bender\Itransition3\Generator;
 use Bender\Itransition3\Formula;
 
+if(empty($argv[1])) {
+    die;
+}
+
 $formula = new Formula();
 $table = new ConsoleTable();
 $customTable = new Table($table, $formula);
