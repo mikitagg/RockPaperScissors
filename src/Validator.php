@@ -19,7 +19,7 @@ class Validator
         if (count($input) <= 3) {
             $this->error[] = "Please enter at least 3 moves \n";
         }
-        if (count($input)%2 != 0) {
+        if (count($input) % 2 != 0) {
             $this->error[] = "Please enter odd move number. \n";
         }
     }

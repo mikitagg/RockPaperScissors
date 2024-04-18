@@ -19,7 +19,7 @@ $table = new ConsoleTable();
 $customTable = new Table($table, $formula);
 $hmac = new Generator();
 $validate = new Validator($argv);
-$uiHelper = new UIHelper($argv);
+$uiHelper = new UIHelper($argv, $customTable);
 
 if (!$validate->isPassed())
 {
@@ -28,8 +28,6 @@ if (!$validate->isPassed())
 }
 
 $moves = $uiHelper->getMoves();
-
-$customTable->create($moves)->displayTable();
 
 $compMove = rand(1, count($moves));
 
@@ -43,7 +41,7 @@ echo "\n";
 
 $userMove = $uiHelper->selectValues($moves);
 
-echo $moves[$userMove] . "\n";
+echo "Your move:" . $moves[$userMove] . "\n";
 
 echo "Computer move: " . $moves[$compMove];
 
