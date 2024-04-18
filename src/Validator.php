@@ -5,6 +5,7 @@ namespace Bender\Itransition3;
 class Validator
 {
     private array $error;
+
     public function __construct(array $input)
     {
         $this->validate($input);

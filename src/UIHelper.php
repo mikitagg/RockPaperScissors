@@ -7,7 +7,7 @@ class UIHelper
 
     const ERROR_MESSAGE = "The number of moves is invalid.\n";
     const KEYBOARD_MESSAGE = "Enter your move:\n";
-    const HELP_MESSAGE = "Please enter a move from the moves provided above.\nTo end the game, enter 0. ";
+    const HELP_MESSAGE = "Please enter a move from the moves provided above.\nTo end the game, enter 0. \n";
     const DRAW_MESSAGE = "\nDraw! \n";
     const LOSE_MESSAGE = "\nYou Lose! \n";
     const WIN_MESSAGE = "\nYou Win! \n";
