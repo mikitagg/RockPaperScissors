@@ -34,7 +34,7 @@ class Table
                     $this->table->addColumn('Win');
                     continue;
                 }
-                    $this->table->addColumn('Lose');
+                $this->table->addColumn('Lose');
             }
         }
         return $this;
