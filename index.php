@@ -70,20 +70,16 @@ $select = readline("Enter your code:");
 
 $userMove = selectValues($select, $moves);
 
-
-echo "\n";
-
 echo $compMove;
 
 $res = $formula->formula($moves, $userMove, $compMove);
 
 if($res == 0) {
-    echo "\n Draw\n";
+    echo "\nDraw! \n";
 } elseif($res > 0) {
-    echo "\n You Win\n";
+    echo "\nYou Win! \n";
 } else {
-    echo "\n You Lose \n";
+    echo "\nYou Lose! \n";
 }
 
-echo "\n";
-echo bin2hex($hmac->getKey()) . "\n";
+echo "HMAC key: " . bin2hex($hmac->getKey()) . "\n";

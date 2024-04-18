@@ -7,6 +7,11 @@ class Validator
     private array $error;
     public function __construct(array $input)
     {
+        $this->validate($input);
+    }
+
+    private function validate(array $input): void
+    {
         if (count(array_unique($input)) !== count($input)) {
             $this->error[] = "Please enter unique values \n";
         }
