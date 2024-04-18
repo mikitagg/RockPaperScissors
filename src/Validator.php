@@ -13,13 +13,13 @@ class Validator
     private function validate(array $input): void
     {
         if (count(array_unique($input)) !== count($input)) {
-            $this->error[] = "Please enter unique values \n";
+            $this->error[] = "All moves must be distinct \n";
         }
         if (count($input) <= 3) {
-            $this->error[] = "Please enter at least 3 values \n";
+            $this->error[] = "Please enter at least 3 moves \n";
         }
         if (count($input)%2 != 0) {
-            $this->error[] = "Please enter %2 values \n";
+            $this->error[] = "Please enter odd move number. \n";
         }
     }
 
