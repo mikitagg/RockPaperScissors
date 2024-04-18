@@ -10,6 +10,7 @@ use Bender\Itransition3\Generator;
 use Bender\Itransition3\Formula;
 
 if(empty($argv[1])) {
+    echo "Enter at least 3 values!\n";
     die;
 }
 
